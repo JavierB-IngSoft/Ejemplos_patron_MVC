@@ -19,6 +19,7 @@ El problema que se observa es que el cambio de intefaz gráfico implica modifica
 se encuentra el main del programa.
 
 Para solucionar este problema, facilitando un rápido cambio de interfaz gráfica, se implementa una clase interface en el cuarto proyecto. De este modo, se respeta el patrón 
-Modelo-Vista-Controlador y se facilita la sustitución de la capa gráfica sin afectar al modelo.
+Modelo-Vista-Controlador y se facilita la sustitución de la capa gráfica sin afectar al modelo. Además se mejora la cohesión interna de cada una de las clases del programa al 
+dedicarse a una sola tarea
 
 Se ha añadido un archivo Enterprise Architect en el que se recogen los Diagramas de Clases de cada proyecto para visualizar su estructura interna.
