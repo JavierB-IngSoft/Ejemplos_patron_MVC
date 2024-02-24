@@ -20,3 +20,5 @@ Modelo-Vista-Controlador y se facilita la sustitución de la capa gráfica sin a
 dedicarse a una sola tarea.
 
 Se ha añadido un archivo Enterprise Architect en el que se recogen los Diagramas de Clases de cada proyecto para visualizar su estructura interna.
+
+Javier.
