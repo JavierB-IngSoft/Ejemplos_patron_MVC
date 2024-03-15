@@ -7,7 +7,8 @@ package GUI;
 /**
  *
  * @author Francisco Javier Bueno Guillén
- * @date 18-2-2024
+ * @date 18-2-2024 Suma
+ * @date 15-3-2024 Resta
  */
 
 import javax.swing.SwingUtilities;

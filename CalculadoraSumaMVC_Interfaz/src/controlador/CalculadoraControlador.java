@@ -7,14 +7,14 @@ package controlador;
 /**
  *
  * @author Francisco Javier Bueno Guillén
- * @date 18-2-2024
+ * @date 18-2-2024 Suma
+ * @date 15-3-2024 Resta
  */
-
 import java.awt.event.*;
 import vista.CalculadoraInterfaz;
 import modelo.CalculadoraModelo;
 
-public class CalculadoraControlador implements ActionListener{
+public class CalculadoraControlador implements ActionListener {
 
     private CalculadoraInterfaz view;
     private CalculadoraModelo model;
@@ -26,11 +26,19 @@ public class CalculadoraControlador implements ActionListener{
 
     public void actionPerformed(ActionEvent e) {
 
-        double num1 = view.getNum1();
-        double num2 = view.getNum2();
-        double result = model.sumar(num1, num2);
-        view.setResult(result);
+        if ("Sumar".equals(e.getActionCommand())) {
 
+            double num1 = view.getNum1();
+            double num2 = view.getNum2();
+            double result = model.sumar(num1, num2);
+            view.setResult(result);
+        }
+
+        if ("Restar".equals(e.getActionCommand())) {
+            double num1 = view.getNum1();
+            double num2 = view.getNum2();
+            double result = model.restar(num1, num2);
+            view.setResult(result);
+        }
     }
-
 }

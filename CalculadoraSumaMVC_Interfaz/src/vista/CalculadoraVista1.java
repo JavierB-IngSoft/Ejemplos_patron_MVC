@@ -7,7 +7,8 @@ package vista;
 /**
  *
  * @author Francisco Javier Bueno Guillén
- * @date 18-2-2024
+ * @date 18-2-2024 Suma
+ * @date 15-3-2024 Resta
  */
 
 import javax.swing.*;
@@ -19,7 +20,7 @@ import java.awt.Color;
 public class CalculadoraVista1 extends JFrame implements CalculadoraInterfaz {
 
     private JTextField numField1, numField2, resultField, voidField;
-    private JButton sumButton;
+    private JButton sumButton, restaButton;
 
     public CalculadoraVista1() {
         setTitle("Calculadora de Suma MVC nuevo interfaz");
@@ -27,7 +28,7 @@ public class CalculadoraVista1 extends JFrame implements CalculadoraInterfaz {
         setSize(450, 150);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 2));
+        panel.setLayout(new GridLayout(4, 2));
         Color miColor = new Color(255, 128,0); // Un color naranja personalizado
         panel.setBackground(miColor);
 
@@ -39,8 +40,12 @@ public class CalculadoraVista1 extends JFrame implements CalculadoraInterfaz {
         numField2 = new JTextField(10);
         panel.add(numField2);
 
-        sumButton = new JButton("Suma");
+        sumButton = new JButton("Sumar");
         panel.add(sumButton);
+        
+        restaButton = new JButton("Restar");
+        panel.add(restaButton);
+
         resultField = new JTextField(10);
         resultField.setEditable(false);
         panel.add(resultField);
@@ -52,6 +57,10 @@ public class CalculadoraVista1 extends JFrame implements CalculadoraInterfaz {
     @Override
     public void setControlador(CalculadoraControlador c) {
         sumButton.addActionListener((ActionListener) c);
+        sumButton.setActionCommand("Sumar");
+        
+        restaButton.addActionListener((ActionListener) c);
+        restaButton.setActionCommand("Restar");
     }
 
     @Override

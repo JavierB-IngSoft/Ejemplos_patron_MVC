@@ -7,7 +7,8 @@ package GUI;
 /**
  *
  * @author Francisco Javier Bueno Guillén
- * @date 18-2-2024
+ * @date 18-2-2024 Suma
+ * @date 15-3-2024 Resta
  */
 
 import javax.swing.*;
@@ -17,7 +18,7 @@ import Dominio.CalculadoraModelo;
 
 public class CalculadoraVista extends JFrame implements ActionListener {
     private JTextField numField1, numField2, resultField, voidField;
-    private JButton sumButton;
+    private JButton sumButton, restaButton;
     private CalculadoraModelo calculadora;
 
     public CalculadoraVista() {
@@ -26,7 +27,7 @@ public class CalculadoraVista extends JFrame implements ActionListener {
         setSize(350, 150);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 2));
+        panel.setLayout(new GridLayout(5, 2));
 
         panel.add(new JLabel("Número 1:"));
         numField1 = new JTextField(10);
@@ -39,6 +40,12 @@ public class CalculadoraVista extends JFrame implements ActionListener {
         sumButton = new JButton("Sumar");
         sumButton.addActionListener(this);
         panel.add(sumButton);
+        panel.add(new JLabel(""));
+        voidField = new JTextField(10);
+        
+        restaButton = new JButton("Restar");
+        restaButton.addActionListener(this);
+        panel.add(restaButton);
         panel.add(new JLabel(""));
         voidField = new JTextField(10);
 
@@ -61,6 +68,18 @@ public class CalculadoraVista extends JFrame implements ActionListener {
                 double num2 = Double.parseDouble(numField2.getText());
                 double result = calculadora.sumar(num1, num2);
                 resultField.setText(String.valueOf(result));
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Por favor ingrese números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+        if (e.getSource() == restaButton) {
+            try {
+                double num1 = Double.parseDouble(numField1.getText());
+                double num2 = Double.parseDouble(numField2.getText());
+                double result = calculadora.restar(num1, num2);
+                resultField.setText(String.valueOf(result));
+             
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Por favor ingrese números válidos.", "Error", JOptionPane.ERROR_MESSAGE);
             }

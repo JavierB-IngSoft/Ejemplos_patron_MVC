@@ -7,9 +7,9 @@ package vista;
 /**
  *
  * @author Francisco Javier Bueno Guillén
- * @date 18-2-2024
+ * @date 18-2-2024 Suma
+ * @date 15-3-2024 Resta
  */
-
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.GridLayout;
@@ -18,7 +18,7 @@ import controlador.CalculadoraControlador;
 public class CalculadoraVista extends JFrame implements CalculadoraInterfaz {
 
     private JTextField numField1, numField2, resultField, voidField;
-    private JButton sumButton;
+    private JButton sumButton, restaButton;
 
     public CalculadoraVista() {
         setTitle("Calculadora de Suma original");
@@ -26,7 +26,7 @@ public class CalculadoraVista extends JFrame implements CalculadoraInterfaz {
         setSize(400, 150);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 2));
+        panel.setLayout(new GridLayout(5, 2));
 
         panel.add(new JLabel("Número 1:"));
         numField1 = new JTextField(10);
@@ -36,8 +36,13 @@ public class CalculadoraVista extends JFrame implements CalculadoraInterfaz {
         numField2 = new JTextField(10);
         panel.add(numField2);
 
-        sumButton = new JButton("+");
+        sumButton = new JButton("Sumar");
         panel.add(sumButton);
+        panel.add(new JLabel(""));
+        voidField = new JTextField(10);
+
+        restaButton = new JButton("Restar");
+        panel.add(restaButton);
         panel.add(new JLabel(""));
         voidField = new JTextField(10);
 
@@ -53,6 +58,10 @@ public class CalculadoraVista extends JFrame implements CalculadoraInterfaz {
     @Override
     public void setControlador(CalculadoraControlador c) {
         sumButton.addActionListener((ActionListener) c);
+        sumButton.setActionCommand("Sumar");
+        
+        restaButton.addActionListener((ActionListener) c);
+        restaButton.setActionCommand("Restar");
     }
 
     @Override
@@ -72,5 +81,9 @@ public class CalculadoraVista extends JFrame implements CalculadoraInterfaz {
 
     public void addSumListener(ActionListener listener) {
         sumButton.addActionListener(listener);
+    }
+
+    public void addRestaListener(ActionListener listener) {
+        restaButton.addActionListener(listener);
     }
 }
