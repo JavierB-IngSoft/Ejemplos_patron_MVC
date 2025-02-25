@@ -8,19 +8,17 @@ Así, la cohesión de la clase es baja al asumir tres responsabilidades en lugar
 
 El proyecto CalculadoraSuma2 implementa dos clases diferenciando el Dominio de la interfaz gráfica o GUI. En este caso el cambio de interfaz es rápido, cambiando en el main el nombre de la clase que se encargará de mostrar el aspecto del programa. Sin embargo, esta clase además se encarga de la gestión de eventos asumiendo dos responsabilidades.
 
-El proyecto Calculadora MVC separa cada responsabilidad en una clase diferente:
+El proyecto CalculadoraSumaMVC separa cada responsabilidad en una clase diferente:
   - Vista: Generar la interfaz gráfica -> CalculadoraVista.java, CalculadoraVista1.java.
   - Controlador: Gestionar la interacción del usuario (gestión de eventos) -> CalculadoraControlador.java.
   - Modelo: Realizar la operación suma -> CalculadoraModelo.java
 
 El problema que se observa es que el cambio de intefaz gráfico implica modificar algunas líneas de código en los archivos CalculadoraControlador.java y CalculadorSumaMVC.java donde se encuentra el main del programa.
 
-Para solucionar este problema, facilitando un rápido cambio de interfaz gráfica, se implementa una clase interface en el cuarto proyecto. De este modo, se respeta el patrón 
+Para solucionar este problema, facilitando un rápido cambio de interfaz gráfica, se implementa una clase interface en el cuarto proyecto (CalculadoraSumaMVC_Interfaz). De este modo, se respeta el patrón 
 Modelo-Vista-Controlador y se facilita la sustitución de la capa gráfica sin afectar al modelo. Además se mejora la cohesión interna de cada una de las clases del programa al 
 dedicarse a una sola tarea.
 
-Se ha añadido un archivo Enterprise Architect en el que se recogen los Diagramas de Clases de cada proyecto para visualizar su estructura interna.
-
-Por último, se ha añadido un proyecto en el que se amplía la funcionalidad de la calculadora a las operaciones habituales: suma, resta, producto y división.
+Por último, se ha añadido un archivo Enterprise Architect en el que se recogen los Diagramas de Clases de cada proyecto para visualizar su estructura interna.
 
 Javier.
