@@ -4,6 +4,7 @@ De ese modo, el proyecto CalculadoraSuma implementa una calculadora simple que s
   - Generar la interfaz gráfica.
   - Gestionar la interacción del usuario (gestión de eventos).
   - Realizar la operación suma.
+
 Así, la cohesión de la clase es baja al asumir tres responsabilidades en lugar de operar con clases especializadas.
 
 El proyecto CalculadoraSuma2 implementa dos clases diferenciando el Dominio de la interfaz gráfica o GUI. En este caso el cambio de interfaz es rápido, cambiando en el main el nombre de la clase que se encargará de mostrar el aspecto del programa. Sin embargo, esta clase además se encarga de la gestión de eventos asumiendo dos responsabilidades.
