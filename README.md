@@ -8,7 +8,7 @@ Así, la cohesión de la clase es baja al asumir tres responsabilidades en lugar
 
 El proyecto CalculadoraSuma2 implementa dos clases diferenciando el Dominio de la interfaz gráfica o GUI. En este caso el cambio de interfaz es rápido, cambiando en el main el nombre de la clase que se encargará de mostrar el aspecto del programa. Sin embargo, esta clase además se encarga de la gestión de eventos asumiendo dos responsabilidades.
 
-El proyecto Calculadora MVC serpara cada responsabilidad en una clase diferente:
+El proyecto Calculadora MVC separa cada responsabilidad en una clase diferente:
   - Vista: Generar la interfaz gráfica -> CalculadoraVista.java, CalculadoraVista1.java.
   - Controlador: Gestionar la interacción del usuario (gestión de eventos) -> CalculadoraControlador.java.
   - Modelo: Realizar la operación suma -> CalculadoraModelo.java
@@ -20,5 +20,7 @@ Modelo-Vista-Controlador y se facilita la sustitución de la capa gráfica sin a
 dedicarse a una sola tarea.
 
 Se ha añadido un archivo Enterprise Architect en el que se recogen los Diagramas de Clases de cada proyecto para visualizar su estructura interna.
+
+Por último, se ha añadido un proyecto en el que se amplía la funcionalidad de la calculadora a las operaciones habituales: suma, resta, producto y división.
 
 Javier.
